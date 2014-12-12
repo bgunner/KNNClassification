@@ -1,0 +1,49 @@
+package knn;
+import java.util.Comparator;
+
+/** 
+ * Classe contendo a representa��o das classes da base de dados
+ * @author brunoufop@msn.com 
+ */
+public class Classe implements Comparator <Classe>{
+	
+	private double identificador;
+	private double votosPonderados = 0;
+	
+	public Classe(){
+		
+	}
+	public Classe(double id){
+		setIdentificador(id);		
+	}
+	public double getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(double identificador) {
+		this.identificador = identificador;
+	}
+	public double getVotosPonderados() {
+		return votosPonderados;
+	}
+	public void setVotosPonderados(double votosPonderados) {
+		this.votosPonderados = votosPonderados;
+	}
+	public void adicionaPeso(double peso){
+		votosPonderados += peso;
+	}
+	@Override
+	public int compare(Classe o1, Classe o2) {
+		double d1 = o1.getVotosPonderados();
+		double d2 = o2.getVotosPonderados();
+		if (d1==d2)
+			return 0;		
+		else if(d1>d2)
+			return 1;
+		else 
+			return -1;
+		
+	}
+	
+	
+
+}
