@@ -18,7 +18,7 @@ Exemplo de uso:
 	ArrayList <Instancia> list = knn.geraInstancias(base,atributos);
 	KnnModificado.setQuantidadeDeVizinhos(17); 
 	knn.particiona(treino, instancias, list);
-	double [][]matriz  = knn.executaProcedimento(algoritmo); // matriz de confusao
+	matriz = knn.executaProcedimento(algoritmo);
 	double exatidao = knn.calculaExatidao(matriz)*100.0;
 
 2) K-Fold
@@ -32,7 +32,7 @@ Exemplo de uso:
 	ArrayList <Instancia> list = knn.geraInstancias(base,atributos);
 
 	int folds = 7;
-	double [][]matriz  = knn.treinaPorFolds(folds, instancias,list,algoritmo); // matriz de confusao
+	matriz = knn.treinaPorFolds(folds, instancias,list,algoritmo);
 	double exatidaol = knn.calculaExatidao(matriz)*100.0;
 
 
